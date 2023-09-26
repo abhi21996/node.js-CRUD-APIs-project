@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/searchstudent">
+        <h3>Search Student</h3>
+        <hr>
+
+        <label for="phn"><b>Phone No</b></label>
+        <input type="text" placeholder="Enter Phone No" name="phone" id="phone">
+
+        <button type="submit" class="registerbtn">SEARCCH STUDENT</button>
+        <a href="/" style="color: black;">BACK TO HOME</a>
+        {{#if mesg1}}
+            <h3>Data found</h3>
+        {{/if}}
+        {{#if mesg2}}
+            <h3>Data not found</h3>
+        {{/if}}
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete standard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/deletestandard">
+            <h3>Delete Standard</h3>
+            <hr>
+            <label for="name">Name of Standard:</label>
+        <input type="text" id="update_name" name="name" required>
+       
+        <br>
+        <br>
+
+            <button type="submit" class="registerbtn">DELETE standard</button>
+            <a href="/" style="color: black;">BACK TO HOME</a>
+        </form>
+    </div>
+    {{#if mesg}}
+        <div class="container">
+            <h3>Data Deleted</h3>
+        </div>
+    {{/if}}
+    {{#if mesg2}}
+        <div class="container">
+            <h3>Data not found</h3>
+        </div>
+    {{/if}}
+</body>
+</html>

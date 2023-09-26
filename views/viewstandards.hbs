@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h3>View standard</h3>
+        <hr>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>teacher</th>
+                <th>division</th>
+                <th>max_students</th>
+            </tr>
+            <tbody>
+           {{#data}}
+                     <tr>
+                            <td>{{name}}</td>
+                            <td>{{teacher}}</td>
+                            <td>{{division}}</td>
+                            <td>{{max_students}}</td>
+                    </tr>
+                {{/data}}
+            </tbody>
+        </table>
+        <a href="/" style="color: black;">BACK TO HOME</a>
+    </div>
+</body>
+</html>

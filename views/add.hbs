@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/addstudent">
+        <h3>Add student</h3>
+        <hr>
+        <label for="name"><b>Student Name</b></label>
+        <input type="text" placceholder="Enter name" name="name" id="name">
+        
+        <label for="phn"><b>Phone no</b></label>
+        <input type="text" placceholder="Enter Phone no" name="phone" id="phone">
+        
+        <label for="eml-id"><b>Email ID</b></label>
+        <input type="text" placceholder="Enter email id" name="email" id="email">
+        
+        <div class="gender_g">
+            <strong>Gender</strong>
+        <input type="radio" name="gender" value="male">Male  
+        <input type="radio" name="gender" value="male">Female  
+        </div>
+        <button type="submit" class="registerbtn">ADD STUDENT</button>
+        <a href="/" style="color:black;">Back to Home</a>
+        {{#if mesg}}
+        <h3>Data inserted</h3>
+        {{/if}}
+        {{#if chkmesg}}
+        <h3>Record Already exists</h3>
+        {{/if}}
+        </form>
+    </div>
+</body>
+</html>
