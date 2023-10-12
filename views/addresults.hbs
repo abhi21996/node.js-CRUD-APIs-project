@@ -5,31 +5,36 @@
     <title>Add Standard</title>
     <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+         body{
+            background-color: rgb(131, 126, 126);
+        }
+    </style>
 </head>
 <body>
    <div class="container mt-5">
-        <form action="/addstandards">
+        <form action="/addresults1">
             <div class="form-group">
-                <label for="name">Name of Standard:</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="e.g. 10th standard" required>
+                <label for="student_unq_no">Student Unique No:</label>
+                <input type="number" class="form-control" id="student_unq_no" name="student_unq_no" placeholder="e.g. 1234" required>
             </div>
 
             <div class="form-group">
-                <label for="teacher">Teacher:</label>
-                <input type="text" class="form-control" id="teacher" name="teacher" required>
+                <label for="year">Name of Year:</label>
+                <input type="text" class="form-control" id="year" name="year" required>
             </div>
 
             <div class="form-group">
-                <label for="division">Division:</label>
-                <input type="text" class="form-control" id="division" name="division" required>
+                <label for="marks">Marks:</label>
+                <input type="number" class="form-control" id="marks" name="marks" required>
             </div>
 
             <div class="form-group">
-                <label for="max_students">Max Students:</label>
-                <input type="number" class="form-control" id="max_students" name="max_students" required>
+                <label for="status">Status:</label>
+                <input type="text" class="form-control" id="status" name="status" placeholder="pass/fail" required>
             </div>
 
-            <button type="submit" class="btn btn-primary">Add Standard</button>
+            <button type="submit" class="btn btn-primary">Add Result</button>
 
             {{#if mesg}}
                 <h3>Data Inserted</h3>

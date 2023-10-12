@@ -3,53 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Search and Update Student</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <form action="/updatesearch">
-        <h3>Search Student</h3>
-        <hr>
-        <label for="phn"><b>Phone No</b></label>
-        <input type="text" placeholder="Enter Phone No" name="phone" id="phone">
+            <h3>Search Student</h3>
+            <hr>
+            <div class="form-group">
+                <label for="phn"><b>Phone No</b></label>
+                <input type="text" class="form-control" placeholder="Enter Phone No" name="phone" id="phone">
+            </div>
 
-        <button type="submit" class="registerbtn">SEARCH STUDENT</button>
-        <a href="/" style="color: black;">BACK TO HOME</a>
-        {{#if mesg2}}
-            <h3>Data not found</h3>
-        {{/if}}
-        {{#if umesg}}
-            <h3>Data Updated</h3>
-        {{/if}}
+            <button type="submit" class="btn btn-primary">SEARCH STUDENT</button>
+            <a href="/" class="btn btn-secondary">BACK TO HOME</a>
+
+            {{#if mesg2}}
+                <div class="container mt-3">
+                    <h3>Data not found</h3>
+                </div>
+            {{/if}}
+            {{#if umesg}}
+                <div class="container mt-3">
+                    <h3>Data Updated</h3>
+                </div>
+            {{/if}}
         </form>
     </div>
+
     {{#if mesg1}}
-    <div class="container">
-        <form action="/updatestudent">
-        <h3>Update Student</h3>
-        <hr>
-        {{#data}}
-        <label for="name"><b>Student Name</b></label>
-        <input type="text" placceholder="Enter name" name="name" value="{{username}}" id="name">
-        
-        <label for="phn"><b>Phone no</b></label>
-        <input type="text" placceholder="Enter Phone no" value="{{phone}}" name="phone" id="phone">
-        
-        <label for="eml-id"><b>Email ID</b></label>
-        <input type="text" placceholder="Enter email id" value="{{email}}" name="email" id="email">
-        
-        <div class="gender_g">
-            <strong>Gender</strong>
-        <input type="radio" name="gender" value="male">Male  
-        <input type="radio" name="gender" value="male">Female  
-        </div>
-        {{/data}}
-        <button type="submit" class="registerbtn">Update STUDENT</button>
-        <a href="/" style="color:black;">Back to Home</a>
+        <div class="container mt-5">
+            <form action="/updatestudent">
+                <h3>Update Student</h3>
+                <hr>
+                {{#data}}
+                    <div class="form-group">
+                        <label for="name"><b>Student Name</b></label>
+                        <input type="text" class="form-control" placeholder="Enter name" name="name" value="{{name}}" id="name">
+                    </div>
 
-        </form>
-    </div>
+                    <div class="form-group">
+                        <label for="phn"><b>Phone no</b></label>
+                        <input type="text" class="form-control" placeholder="Enter Phone no" value="{{phone}}" name="phone" id="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eml-id"><b>Email ID</b></label>
+                        <input type="text" class="form-control" placeholder="Enter email id" value="{{email}}" name="email" id="email">
+                    </div>
+
+                    <div class="gender_g">
+                        <strong>Gender</strong>
+                        <input type="radio" name="gender" value="male">Male  
+                        <input type="radio" name="gender" value="female">Female  
+                    </div>
+                {{/data}}
+
+                <button type="submit" class="btn btn-primary">Update STUDENT</button>
+                <a href="/" class="btn btn-secondary">Back to Home</a>
+            </form>
+        </div>
     {{/if}}
+
+    <!-- Add Bootstrap JS and Popper.js if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

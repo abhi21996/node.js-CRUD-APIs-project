@@ -3,37 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Add Student</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            background-color: rgb(131, 126, 126);
+        }
+        /* Add your custom styles here if needed */
+        .gender_g {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <form action="/addstudent">
-        <h3>Add student</h3>
-        <hr>
-        <label for="name"><b>Student Name</b></label>
-        <input type="text" placceholder="Enter name" name="name" id="name">
-        
-        <label for="phn"><b>Phone no</b></label>
-        <input type="text" placceholder="Enter Phone no" name="phone" id="phone">
-        
-        <label for="eml-id"><b>Email ID</b></label>
-        <input type="text" placceholder="Enter email id" name="email" id="email">
-        
-        <div class="gender_g">
-            <strong>Gender</strong>
-        <input type="radio" name="gender" value="male">Male  
-        <input type="radio" name="gender" value="male">Female  
-        </div>
-        <button type="submit" class="registerbtn">ADD STUDENT</button>
-        <a href="/" style="color:black;">Back to Home</a>
-        {{#if mesg}}
-        <h3>Data inserted</h3>
-        {{/if}}
-        {{#if chkmesg}}
-        <h3>Record Already exists</h3>
-        {{/if}}
+            <h3>Add Student</h3>
+            <hr>
+
+            <div class="form-group">
+                <label for="name"><b>Student Name</b></label>
+                <input type="text" class="form-control" placeholder="Enter name" name="name" id="name">
+            </div>
+            
+            <div class="form-group">
+                <label for="phn"><b>Phone Number</b></label>
+                <input type="text" class="form-control" placeholder="Enter phone number" name="phone" id="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="eml-id"><b>Email ID</b></label>
+                <input type="text" class="form-control" placeholder="Enter email ID" name="email" id="email">
+            </div>
+            
+            <div class="form-group gender_g">
+                <strong>Gender</strong>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="gender" value="male">
+                    <label class="form-check-label">Male</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="gender" value="female">
+                    <label class="form-check-label">Female</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Student</button>
+            <a href="/" class="btn btn-secondary ml-2">Back to Home</a>
+
+            {{#if mesg}}
+                <h3>Data Inserted</h3>
+            {{/if}}
+
+            {{#if chkmesg}}
+                <h3>Record Already Exists</h3>
+            {{/if}}
         </form>
     </div>
+
+    <!-- Add Bootstrap JS and Popper.js if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

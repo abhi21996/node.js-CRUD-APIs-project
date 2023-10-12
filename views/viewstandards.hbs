@@ -3,32 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Student</title>
-    <link rel="stylesheet" href="style.css">
+    <title>View Standard</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h3>View standard</h3>
+    <div class="container mt-5">
+        <h3>View Standard</h3>
         <hr>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>teacher</th>
-                <th>division</th>
-                <th>max_students</th>
-            </tr>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Teacher</th>
+                    <th>Division</th>
+                    <th>Max Students</th>
+                </tr>
+            </thead>
             <tbody>
-           {{#data}}
-                     <tr>
-                            <td>{{name}}</td>
-                            <td>{{teacher}}</td>
-                            <td>{{division}}</td>
-                            <td>{{max_students}}</td>
+                {{#data}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{teacher}}</td>
+                        <td>{{division}}</td>
+                        <td>{{max_students}}</td>
                     </tr>
                 {{/data}}
             </tbody>
         </table>
-        <a href="/" style="color: black;">BACK TO HOME</a>
+        <a href="/" class="btn btn-secondary">BACK TO HOME</a>
     </div>
+
+    <!-- Add Bootstrap JS and Popper.js if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

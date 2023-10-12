@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Add Standard</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+         body{
+            background-color: rgb(131, 126, 126);
+        }
+    </style>
+</head>
+<body>  
+   <div class="container mt-5">
+        <form action="/addfees1">
+            <div class="form-group">
+                <label for="student_unique_no">Student Unique No:</label>
+                <input type="number" class="form-control" id="student_unique_no" name="student_unique_no" placeholder="e.g. 1234" required>
+            </div>
+
+            <div class="form-group">
+                <label for="payment_amount">Payment Amount:</label>
+                <input type="number" class="form-control" id="payment_amount" name="payment_amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fee_type">Fee Type:</label>
+                <input type="text" class="form-control" id="fee_type" name="fee_type" placeholder="tuition fee" required>
+            </div>
+
+            <div class="form-group">
+                <label for="academic_year">Academic Year:</label>
+                <input type="number" class="form-control" id="academic_year" name="academic_year" required>
+            </div>
+
+            <div class="form-group">
+                <label for="payment_status">Payment Status:</label>
+                <input type="text" class="form-control" id="payment_status" name="payment_status" placeholder="paid/ unpaid/ overdue" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Fees</button>
+
+            {{#if mesg}}
+                <h3>Data Inserted</h3>
+            {{/if}}
+        </form>
+        <br>
+        <br>
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

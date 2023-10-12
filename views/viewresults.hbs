@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student Results</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/viewresults1">
+            <h3>Search Standard</h3>
+            <hr>
+            <div class="form-group">
+                <label for="student_unq_no">Student unique no:</label>
+                <input type="number" class="form-control" id="student_unq_no" name="student_unq_no" placeholder="e.g. 1234" required>
+            </div>
+            <button type="submit" class="btn btn-primary">SEARCH Student Result</button>
+            <a href="/" class="btn btn-secondary">BACK TO HOME</a>
+
+            {{#if mesg2}}
+                <div class="container mt-3">
+                    <h3>Data not found</h3>
+                </div>
+            {{/if}}
+        </form>
+    </div>
+
+    {{#if mesg1}}
+        <div class="container mt-5">
+            <h3>View Result</h3>
+            <hr>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Student Unique No</th>
+                        <th>Year</th>
+                        <th>Marks</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#data}}
+                        <tr>
+                            <td>{{student_unq_no}}</td>
+                            <td>{{year}}</td>
+                            <td>{{marks}}</td>
+                            <td>{{status}}</td>
+                        </tr>
+                    {{/data}}
+                </tbody>
+            </table>
+            <a href="/" class="btn btn-secondary">BACK TO HOME</a>
+        </div>
+    {{/if}}
+
+    <!-- Add Bootstrap JS and Popper.js if needed -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

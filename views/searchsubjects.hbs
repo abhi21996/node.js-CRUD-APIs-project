@@ -3,35 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Subject</title>
+    <title>Search Subject</title>
     <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <form action="/deletesubjects1">
-            <h3>Delete Subject</h3>
+        <form action="/searchsubject">
+            <h3>Search Subject</h3>
             <hr>
+
             <div class="form-group">
                 <label for="name">Name of Subject:</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="e.g. physics" required>
             </div>
 
-            <button type="submit" class="btn btn-danger">DELETE Subject</button>
+            <button type="submit" class="btn btn-primary">SEARCH Subject</button>
             <a href="/" class="btn btn-secondary">BACK TO HOME</a>
+
+            {{#if mesg1}}
+                <div class="container mt-3">
+                    <h3>Data Found</h3>
+                </div>
+            {{/if}}
+
+            {{#if mesg2}}
+                <div class="container mt-3">
+                    <h3>Data Not Found</h3>
+                </div>
+            {{/if}}
         </form>
     </div>
-
-    {{#if mesg}}
-        <div class="container mt-3">
-            <h3>Data Deleted</h3>
-        </div>
-    {{/if}}
-    {{#if mesg2}}
-        <div class="container mt-3">
-            <h3>Data not found</h3>
-        </div>
-    {{/if}}
 
     <!-- Add Bootstrap JS and Popper.js if needed -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
